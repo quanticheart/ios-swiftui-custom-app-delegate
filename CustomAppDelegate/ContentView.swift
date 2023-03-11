@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var appDelegate: CustomAppDelegateForSwiftUI
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(appDelegate.date.formatted(date: .omitted, time: .standard))
         }
         .padding()
     }
